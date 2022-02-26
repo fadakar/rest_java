@@ -34,15 +34,4 @@ public class HelloResource {
         return "edit: " + id;
     }
 
-
-    @GET
-    @Path("person")
-    @Produces("application/json")
-    public Person getPerson() {
-        Person person = new Person();
-        person.setId(1);
-        person.setFirstName("reza");
-        person.setLastName("fadakar");
-        return person;
-    }
 }
