@@ -80,8 +80,6 @@ public abstract class BaseDA<T> {
         Object pkValue = "";
         String values = "";
         for (String field : fields) {
-            if (gaurd.contains(field))
-                continue;
             field = field.substring(0, 1).toUpperCase() + field.substring(1); // capitalize field name from id to Id
             Method method = item.getClass().getMethod("get" + field); // get SetName method for example
             method.setAccessible(true); // This is important if you want to access protected or private method. For public method you can skip
@@ -91,6 +89,8 @@ public abstract class BaseDA<T> {
                 pkValue = value;
                 continue;
             }
+            if (gaurd.contains(field))
+                continue;
 
             if (value instanceof Integer) {
                 values += field + "=" + values + ",";
