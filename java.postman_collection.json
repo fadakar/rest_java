@@ -14,9 +14,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/person",
+							"raw": "{{baseUrl}}/api/person",
 							"host": [
-								"{{url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
@@ -32,9 +32,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/person/89",
+							"raw": "{{baseUrl}}/api/person/89",
 							"host": [
-								"{{url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
@@ -51,9 +51,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/person?name=test create&number=13222323",
+							"raw": "{{baseUrl}}/api/person?name=test create&number=13222323",
 							"host": [
-								"{{url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
@@ -79,9 +79,9 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/person/94?name=test create updated&number=13222323",
+							"raw": "{{baseUrl}}/api/person/94?name=test create updated&number=13222323",
 							"host": [
-								"{{url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
@@ -101,8 +101,54 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/person/89",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"89"
+							]
+						}
+					},
+					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/demo1_war_exploded",
+			"type": "string"
 		}
 	]
 }
